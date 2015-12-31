@@ -1,17 +1,16 @@
 <html>
 <head>
-    <title>searchKey bug? specification?</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="http://ichord.github.io/At.js/dist/css/jquery.atwho.css">
-    <link rel="stylesheet" type="text/css" href="src/css/app.css">
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript" src="http://ichord.github.io/Caret.js/src/jquery.caret.js"></script>
-    <script type="text/javascript" src="http://ichord.github.io/At.js/dist/js/jquery.atwho.min.js"></script>
+  <title>searchKey bug? specification?</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="http://ichord.github.io/At.js/dist/css/jquery.atwho.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://ichord.github.io/Caret.js/src/jquery.caret.js"></script>
+  <script type="text/javascript" src="http://ichord.github.io/At.js/dist/js/jquery.atwho.min.js"></script>
+  <script type="text/javascript" src="http://coffeescript.org/extras/coffee-script.js"></script>
 </head>
 <body>
   <textarea id="A" cols="50" rows="10" placeholder="A: If input string after ':', autocomplete doesn't show because data will filtered by searchKey."></textarea>
   <textarea id="B" cols="50" rows="10" placeholder="B: Add name property with query value to data. Filter by searchKey isn't applied."></textarea>
-  <script type="text/javascript" src="http://coffeescript.org/extras/coffee-script.js"></script>
   <script type="text/coffeescript">
     $("#A").atwho
       at : ":"
