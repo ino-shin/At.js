@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>searchKey bug? specification?</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="http://ichord.github.io/At.js/dist/css/jquery.atwho.css">
+    <link rel="stylesheet" type="text/css" href="src/css/app.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ichord.github.io/Caret.js/src/jquery.caret.js"></script>
+    <script type="text/javascript" src="http://ichord.github.io/At.js/dist/js/jquery.atwho.min.js"></script>
+</head>
+<body>
+  <textarea id="A" cols="50" rows="10" placeholder="A: If input string after ':', autocomplete doesn't show because data will filtered by searchKey."></textarea>
+  <textarea id="B" cols="50" rows="10" placeholder="B: Add name property with query value to data. Filter by searchKey isn't applied."></textarea>
+  <script type="text/javascript" src="http://coffeescript.org/extras/coffee-script.js"></script>
+  <script type="text/coffeescript">
+    $("#A").atwho
+      at : ":"
+      displayTpl : "<li>${value}</li>"
+      callbacks :
+        remoteFilter : (query, callback) ->
+          # Get data which filtered by 'query' string
+          # $.ajax "http://...?q=${query}"
+          callback [ {value : "test1"}, {value : "test2"} ]
+
+    $("#B").atwho
+      at : ":"
+      displayTpl : "<li>${value}</li>"
+      callbacks :
+        remoteFilter : (query, callback) ->
+          # Get data which filtered by 'query' string
+          # $.ajax "http://...?q=${query}"
+          callback [ {name: query, value : "test1"}, {name: query, value : "test2"} ]
+  </script>
+</body>
+</html>
